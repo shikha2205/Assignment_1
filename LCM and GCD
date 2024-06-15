@@ -1,0 +1,17 @@
+class Solution {
+    static Long[] lcmAndGcd(Long A, Long B) {
+        long gcdValue = gcd(A, B);
+        long lcmValue = (A * B) / gcdValue;
+        return new Long[]{lcmValue, gcdValue};
+    }
+
+    static long gcd(Long a, Long b) {
+        while (b != 0) {
+            long temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+}
+   
